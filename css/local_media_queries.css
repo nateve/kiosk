@@ -59,7 +59,6 @@ h4{
     font-size: 1.5em;
     line-height: 1;
     background-color: #ccdef3;
-    box-shadow: 3px 3px 6px #888888;
 }
 
 .btn-xl:active{
@@ -161,22 +160,17 @@ h4{
 }
 
 .unit_name {
-    font-family: serif;
-    font-weight: 100;
-    text-transform:uppercase;
-    letter-spacing: normal;
-    color: white;
+    background-image: url("../img/undergraduate_library_wordmark.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 50px;
 }
 
 .sub_header {
-    float:right;
-    font-family: Arial;
-    font-weight: 100;
-    letter-spacing: normal;
-    color: white;
-    font-size: 1.5em;
-    width: 100%
-
+    background-image: url("../img/subheader.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 35px;
 }
 
 
@@ -186,7 +180,7 @@ h4{
 #button_row {
     width: 100%;
     position: absolute;
-    bottom: 130px;
+    bottom: 95px;
     text-align: center;
 }
 
@@ -256,13 +250,15 @@ h4{
 }
 
 /*CHANGED*/
-.copy-text {
+.copyright-text {
     float:right;
     color: white;
     z-index: 500;
-    padding-top:50px;
+    padding-top:35px;
     padding-right: 20px;
     font-weight:lighter;
+    font-size: 12px;
+    letter-spacing: 1.5px;
 }
 
 #unit_footer {
@@ -282,12 +278,10 @@ h4{
 #unit_header {
     position: relative;
     top: 0;
-    width: 100%;
     height: 60px;
     overflow: hidden;
     background-color: #022544;
 }
-
 
 
 #upper li, #lower li {
@@ -299,42 +293,4 @@ h4{
     color: #6D79B5;
 }
 
-/* Small devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-
-    .unit_name {
-        font-size: 2.5em;
-        padding-left: 30px;
-        letter-spacing: 3px;
-    }
-
-    .xl_font {
-        font-size: 3em;
-    }
-
-    /* ids */
-
-    #iframe_container {
-        overflow: scroll;
-        -webkit-overflow-scrolling:touch;
-    }
-
-    #main_iframe {
-        overflow: scroll;
-    }
-
-
-}
-
-/* Medium devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-    .blue_filler {
-        height: 100%;
-        position: absolute;
-        right: 0;
-        padding-bottom: 32768px;
-        margin-bottom: -32768px;
-    }
-
-}
 
