@@ -64,10 +64,10 @@ $.fn.textWidth = function(){
 };
 
 function setButtonWidth() {
-    var max_width = 403;
+    var max_width = 195;
     $('.btn-xl').each(function(i,obj) {
         var txt_width = $(this).textWidth();
-        if (txt_width > 403) {
+        if (txt_width > 195) {
           max_width = txt_width;
         }         
     });

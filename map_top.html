@@ -42,32 +42,32 @@
   <div class="row">
     <div class="col-md-12">
       <a type="button" class="btn btn-xl" href="upper_map.html">
-          <span class="icon fa-stack fa-3x">
+          <span class="icon fa-stack fa-1x">
             <i class="fa fa-circle fa-stack-2x"></i>
             <i class="fa fa-arrow-circle-up fa-stack-2x"></i>
           </span>
-         <h1>Upper Level</h1>
+         <h4>Upper Level</h4>
       </a>
       <a type="button" class="btn btn-xl" href="lower_map.html">
-          <span class="icon fa-stack fa-3x">
+          <span class="icon fa-stack fa-1x">
             <i class="fa fa-circle fa-stack-2x"></i>
             <i class="fa fa-arrow-circle-down fa-stack-2x"></i>
           </span>
-          <h1>Lower Level</h1>
+          <h4>Lower Level</h4>
       </a>
       <a type="button" class="btn btn-xl" href="directory.html">
-          <span class="icon fa-stack fa-3x">
+          <span class="icon fa-stack fa-1x">
             <i class="fa fa fa-circle fa-stack-2x blue-circle"></i>
             <i class="fa fa-list-alt fa-stack-1x fa-inverse"></i>
           </span>
-          <h1>Directory</h1>
+          <h4>Directory</h4>
       </a>
       <a type="button" class="btn btn-xl" href="call_number.html">
-          <span class="icon fa-stack fa-3x">
+          <span class="icon fa-stack fa-1x">
             <i class="fa fa-circle fa-stack-2x blue-circle"></i>
             <i class="fa fa-search fa-stack-1x fa-inverse"></i>
           </span>
-          <h1>Call Number Search</h1>
+          <h4>Call Number Search</h4>
       </a>
     </div>
   </div>
@@ -78,11 +78,11 @@
   <div class="spacer"></div>
   <p class="copy-text">&copy; 2016 University of Illinois</p>
   <div class="home-logo">
-    <span class="icon fa-stack fa-3x left-icon">
+    <span class="icon fa-stack fa-1x left-icon">
         <i class="fa fa-circle fa-stack-2x orange-circle"></i>
         <i class="fa fa-home fa-stack-1x fa-inverse"></i>
     </span>
-    <p id="home-text" class="right-text">HOME</p>
+    <h4 id="home-text" class="right-text">Home</h4>
   </div>
 </div> <!-- /container -->
 
@@ -107,8 +107,6 @@
       var bg_offset = parseInt(footer_loc.top - header_loc - 80);
       $("#main_content").height(bg_offset);
 
-      var offset = parseInt(footer_loc.top - bg_offset - 30);
-      $("#bottom").height(offset);
     }
 
     // page load functions
