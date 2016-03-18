@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kiosk Display - Undergraduate Library History</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/local_media_queries.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container-fluid">
+    <div class="row" id="unit_header">
+      <div class="col-xs-12 col-md-8">
+        <h4 class="unit_name">Undergraduate Library</h4>
+      </div>
+      <div class="col-xs-12 col-md-4 blue_filler">
+
+      </div>
+    </div>
+  </div> <!-- /container -->
+  
+  <!-- main call to action //-->
+  <div class="container-fluid" id="news-frame">
+    <div class="row col-md-offset-1">
+      <h1 class="main_call blue-dk">History</h1>   
+    </div>
+      
+    <div class="col-md-10 col-md-offset-1 news-container">
+      
+      <div class="news-item">
+        <div class="news-image pull-left">
+          <img src="img/ugl_old.jpg" alt="Undergrad Library from 1969" />
+        </div>
+        <div class="news-body">
+          <h4 class="news-header blue-md">Founding</h4>
+          <p class="no-margin">The Original Undergraduate Library opened in Fall 1949, as part of Room 101 of the Main Library.  In 1960, a University resolution resulted in the decision to build a separate Undergraduate Library.  On September 21, 1966 the groundbreaking of the current Undergraduate Library occurred, followed by its dedication three years later on November 15, 1969. </p>
+        </div>   
+      </div>
+
+      <div class="news-item">
+        <div class="news-image pull-left">
+          <img src="img/morrow_plots.gif" alt="Morrow Plots" />
+        </div>
+        <div class="news-body">
+          <h4 class="news-header blue-md">The Underground Library</h4>
+          <p class="no-margin">An often-asked question regarding the Undergraduate Library is why it was built underground.  The common answer given by most is that the architects simply did not want to cast shade on the neighboring Morrow Plots (see image on left). Another reason was that the Campus Master Plan of the day required an open mall behind the Auditorium to maintain symmetry.</p>
+        </div>   
+      </div>      
+      
+      <div class="news-item">
+        <div class="news-image pull-left">
+          <img src="img/ugl_new.jpg" alt="Undergrad Library from 1998" />
+        </div>
+        <div class="news-body">
+          <h4 class="news-header blue-md">Evolution</h4>
+          <p class="no-margin">The collections and services of the Undergraduate Library have undergone many changes in the 40+ years of its existence.  DVDs, video games, and electronic books, journals, and videos now complement the traditional print collection.
+          Research services are offered online (by email, chat, and mobile texting), and the instruction program continues to expand.  A variety of campus partners have joined
+          forces with the Undergraduate Library over the years, including the Career Center, McKinley Health Center, and our latest community partners, the dog therapy professionals from
+          the CU Canine Connection.
+          </p>
+        </div>   
+      </div>
+      
+      <div class="news-item">
+        <div class="news-body">
+          <p class="no-margin">
+            For more information on the history of the Undergraduate Library, ask about our UGL History Online Library Guide.
+          </p>
+        </div>   
+      </div>
+     
+      
+    </div>
+      
+  </div> <!-- /container //-->
+
+  <!-- main navigation button//-->
+  <div class="container-fluid" id="button_row">
+    <div class="row">
+      <div class="col-xs-12 col-md-6 col-md-offset-3">
+        <a type="button" class="btn btn-xl" href="welcome_top.html">Start Over</a>
+      </div>
+    </div>
+  </div> <!-- /container //-->
+  
+  <!-- footer //-->
+  <div class="container-fluid">
+    <div class="row" id="unit_footer">
+      <div class="col-md-3 pull-right">
+        <img src="img/ilogo_horz_bold.gif" alt="University of Illinois Logo" class="logo" />  
+      </div>
+      
+    </div> <!-- end footer row //-->
+
+  </div> <!-- /container -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/kiosk.js"></script>
+    <script>
+      $(document).ready(function(){
+        
+        //functions
+        
+        function setHeight () {
+          //var viewport = $( window ).height();
+          var footer_loc = $("#unit_footer").offset();
+          var header_loc = $("#unit_header").height();
+          var maincall_loc = $("h1.main_call").first().outerHeight(true);
+          var bg_offset = parseInt(footer_loc.top - header_loc - 120);
+          var news_offset = parseInt(bg_offset-maincall_loc);
+          $("#iframe_container").height(bg_offset);
+          $("#news-frame").height(bg_offset);
+          $(".news-container").css("height", news_offset);
+          $("#main_iframe").css("height", "100%");
+          
+        }
+        
+        function preload(sources) {
+          jQuery.each(sources, function(i,source) { jQuery.get(source); });
+        }
+        
+        // global checks   
+        $( window ).resize(function() {
+          waitForFinalEvent(function(){
+            setHeight();
+          }, 1000);
+        })
+        
+        // loading calls
+        setHeight();
+        
+        preload([
+            'img/ugl_old.jpg',
+            'img/ugl_new.jpg',
+            'img/morrow_plots.jpg',
+        ]); 
+        
+      })
+      
+    </script>
+  </body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kiosk Display - Undergraduate Library Event Calendar</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/local_media_queries.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container-fluid">
+    <div class="row" id="unit_header">
+      <div class="col-xs-12 col-md-8">
+        <h4 class="unit_name">Undergraduate Library</h4>
+      </div>
+      <div class="col-xs-12 col-md-4 blue_filler">
+
+      </div>
+    </div>
+  </div> <!-- /container -->
+  
+  <!-- main call to action //-->
+  <div class="container-fluid">
+    <div class="row col-md-10 col-md-offset-1">
+      <h1 class="main_call blue-dk">Event Calendar</h1>
+    </div>
+    <div class="row col-md-10 col-md-offset-1" id="iframe_container">
+      <div id="loading"><h1>Page is loading...</h1></div>
+      <iframe id="main_iframe" src="" style="border: 0" width="100%" height="450px" frameborder="0" scrolling="no"></iframe>
+      
+    </div>
+  </div> <!-- /container //-->
+
+  <!-- main navigation button//-->
+  <div class="container-fluid" id="button_row">
+    <div class="row">
+      <div class="col-xs-12 col-md-6 col-md-offset-3">
+        <a type="button" class="btn btn-xl" href="welcome_top.html">Start Over</a>
+      </div>
+    </div>
+  </div> <!-- /container //-->
+  
+  <!-- footer //-->
+  <div class="container-fluid">
+    <div class="row" id="unit_footer">
+      <div class="col-md-3 pull-right">
+        <img src="img/ilogo_horz_bold.gif" alt="University of Illinois Logo" class="logo" />  
+      </div>
+      
+    </div> <!-- end footer row //-->
+
+  </div> <!-- /container -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/kiosk.js"></script>
+    <script>
+      $(document).ready(function(){
+        function setHeight () {
+          //var viewport = $( window ).height();
+          var footer_loc = $("#unit_footer").offset();
+          var header_loc = $("#unit_header").height();
+          var maincall_loc = $("h1.main_call").first().outerHeight(true);
+          var bg_offset = parseInt(footer_loc.top - header_loc - 120);
+          var news_offset = parseInt(bg_offset-maincall_loc);
+
+          $("#iframe_container").height(news_offset);
+          $("#main_iframe").css("height", "100%");
+        }
+        
+        function loadIframe () {
+          var d = new Date();
+          var n = d.getTime();
+          $("#main_iframe").attr( "src", "https://www.google.com/calendar/embed?src=askundergrad%40gmail.com&ctz=America/Chicago&showTitle=0&time=" + n); 
+        }
+        
+        // global checks
+        
+        $( window ).resize(function() {
+          //setHeight();
+        })
+        
+        $("#main_iframe").load(function() {
+          $('#loading').hide();
+          $('#main_iframe').show();
+        });
+        
+        // loading calls
+        //setHeight();
+        loadIframe();
+        
+      })
+      
+    </script>
+  </body>
+</html>

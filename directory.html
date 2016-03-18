@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kiosk Display - Undergraduate Library Directory</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/local_media_queries.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container-fluid">
+    <div class="row" id="unit_header">
+      <div class="col-xs-12 col-md-8">
+        <h4 class="unit_name">Undergraduate Library</h4>
+      </div>
+      <div class="col-xs-12 col-md-4 blue_filler">
+
+      </div>
+    </div>
+  </div> <!-- /container -->
+  
+  <!-- main call to action //-->
+  <div class="container-fluid" id="news-frame">
+    <div class="row">
+      <h1 class="main_call blue-dk">Directory</h1>   
+    </div>
+      
+    <div class="col-md-12 news-container">
+      <div class="col-sm-6">
+        <div class="news-body" id="upper">
+          <h4 class="news-header blue-md">Upper Level</h4>
+          <ul>
+            <li><a href="upper_map_zoom.html?space=Room289">289 CITES Classroom</a></li>
+            <li><a href="upper_map_zoom.html?space=Room291">291 Library Instruction Classroom</a></li>
+            <li><a href="upper_map_zoom.html?space=circ&x_loc=900&y_loc=700">Circulation & Reserves</a></li>
+            <li><a href="upper_map_zoom.html?space=gaming&x_loc=500&y_loc=300">Gaming Center</a></li>
+            <li><a href="upper_map_zoom.html?space=loanabletech&x_loc=800&y_loc=550">Loanable Technology</a></li>
+            <li><a href="upper_map_zoom.html?space=mediacommons&y_loc=150">Media Commons</a></li>
+            <li><a href="upper_map_zoom.html?space=mediaediting&x_loc=150&y_loc=250">Media Editing Workstations</a></li>
+            <li><a href="upper_map_zoom.html?space=newbooks&x_loc=700&y_loc=500">New Books and Magazines</a></li>
+            <li><a href="upper_map_zoom.html?space=research&x_loc=700&y_loc=0">Office Hours/Research Assistance</a></li>
+            <li><a href="upper_map_zoom.html?space=printersupper&x_loc=900&y_loc=600">Printing</a></li>
+            <li><a href="upper_map_zoom.html?space=scannersupper&x_loc=600&y_loc=300">Scanners</a></li>
+            <li><a href="upper_map_zoom.html?space=studyupper&x_loc=300&y_loc=300">Study Rooms</a></li>
+            <li><a href="upper_map_zoom.html?space=techsupport&x_loc=0&y_loc=0">Technology Support Desk</a></li>
+            <li><a href="upper_map_zoom.html?space=videostudio&x_loc=100&y_loc=0">Video Production Studio</a></li>
+            <li><a href="upper_map_zoom.html?space=writersworkshop&x_loc=0&y_loc=0">Writer's Workshop</a></li>
+          </ul>
+        </div>   
+      </div>
+      
+      <div class="col-sm-6">
+        <div class="news-body" id="lower">
+          <h4 class="news-header blue-md">Lower Level</h4>
+          <ul>
+            <li><a href="lower_map_zoom.html?space=audiobooth&x_loc=0&y_loc=0">Audio Booth</a></li>
+            <li><a href="lower_map_zoom.html?space=books&x_loc=0&y_loc=100">Books</a></li>
+            <li><a href="lower_map_zoom.html?space=magazines&x_loc=0&y_loc=350">Magazines and Journals</a></li>
+            <li><a href="lower_map_zoom.html?space=mediacollection&x_loc=0&y_loc=500">Media Collection</a></li>
+            <li><a href="lower_map_zoom.html?space=mediaviewing&x_loc=0&y_loc=250">Media Viewing Stations</a></li>
+            <li><a href="lower_map_zoom.html?space=mortenson&x_loc=400&y_loc=500">Mortenson Center</a></li>
+            <li><a href="lower_map_zoom.html?space=studycarrels&x_loc=0&y_loc=0">Study Carrels</a></li>
+          </ul>
+        </div>   
+      </div>
+      
+    </div>
+      
+  </div> <!-- /container //-->
+
+  <!-- main navigation button//-->
+  <div class="container-fluid" id="button_row">
+    <div class="row">
+      <div class="col-xs-12 col-md-6 col-md-offset-3">
+        <a type="button" class="btn btn-xl" href="map_top.html">Start Over</a>
+      </div>
+    </div>
+  </div> <!-- /container //-->
+  
+  <!-- footer //-->
+  <div class="container-fluid">
+    <div class="row" id="unit_footer">
+      <div class="col-md-3 pull-right">
+        <img src="img/ilogo_horz_bold.gif" alt="University of Illinois Logo" class="logo" />  
+      </div>
+      
+    </div> <!-- end footer row //-->
+
+  </div> <!-- /container -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/kiosk.js"></script>
+    <script>
+      $(document).ready(function(){
+        
+        //functions
+        
+        function setHeight () {
+          //var viewport = $( window ).height();
+          var footer_loc = $("#unit_footer").offset();
+          var header_loc = $("#unit_header").height();
+          var maincall_loc = $("h1.main_call").first().outerHeight(true);
+          var bg_offset = parseInt(footer_loc.top - header_loc - 120);
+          var news_offset = parseInt(bg_offset-maincall_loc);
+          $("#iframe_container").height(bg_offset);
+          $("#news-frame").height(bg_offset);
+          $(".news-container").css("height", news_offset);
+          $("#main_iframe").css("height", "100%");
+          
+        }
+        
+        // global checks   
+        $( window ).resize(function() {
+          setHeight();
+        })
+        
+        // loading calls
+        setHeight();
+        
+      })
+      
+    </script>
+    <script src="http://www.library.illinois.edu/scripts/ga/gaelt.js" type="text/javascript"></script>	
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-20288093-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
+</html>
